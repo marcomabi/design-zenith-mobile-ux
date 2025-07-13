@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Header } from "@/components/navigation/Header";
 import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
+import { Footer } from "@/components/layout/Footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -21,6 +22,8 @@ export function Layout({ children, showBreadcrumbs = true }: LayoutProps) {
       <main className="flex-1">
         {children}
       </main>
+      
+      <Footer />
     </div>
   );
 }
