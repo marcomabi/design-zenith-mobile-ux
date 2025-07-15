@@ -5,16 +5,30 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { SEOHead } from "@/components/seo/SEOHead";
+import { BreadcrumbSchema } from "@/components/seo/StructuredData";
 
 const Contact = () => {
+  const breadcrumbs = [
+    { name: "Home", url: "https://goodworkroofing.com" },
+    { name: "Contact", url: "https://goodworkroofing.com/contact" }
+  ];
+
   return (
     <Layout>
+      <SEOHead 
+        title="Contact Good Work Roofing - McKinney TX Roofing Contractor"
+        description="Contact Good Work Roofing in McKinney, TX for free roofing estimates. Call (214) 836-4511 or visit us at 470 Adriatic Pkwy, McKinney, TX 75070. Licensed, insured roofing contractor."
+        keywords="contact roofing contractor McKinney TX, roofing estimates Dallas, Good Work Roofing phone number, roofing company McKinney address"
+        canonical="https://goodworkroofing.com/contact"
+      />
+      <BreadcrumbSchema items={breadcrumbs} />
       {/* Hero Section */}
       <section className="bg-secondary text-secondary-foreground py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
+          <h1 className="text-5xl font-bold mb-6">Contact Good Work Roofing</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Ready to start your roofing project? Get in touch for a free consultation and estimate.
+            Ready to start your roofing project in McKinney or Dallas-Fort Worth? Get in touch for a free consultation and estimate.
           </p>
         </div>
       </section>
@@ -99,7 +113,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Phone</h3>
-                      <p className="text-muted-foreground">(214) 555-0123</p>
+                      <p className="text-muted-foreground">(214) 836-4511</p>
                     </div>
                   </div>
                   
@@ -109,7 +123,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-muted-foreground">info@roofmasterpro.com</p>
+                      <p className="text-muted-foreground">Goodworkroofing@gmail.com</p>
                     </div>
                   </div>
                   
@@ -120,8 +134,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Address</h3>
                       <p className="text-muted-foreground">
-                        123 Main Street<br />
-                        Dallas, TX 75201
+                        470 Adriatic Pkwy<br />
+                        McKinney, TX 75070
                       </p>
                     </div>
                   </div>
@@ -151,11 +165,41 @@ const Contact = () => {
                     Need immediate assistance? We offer 24/7 emergency roofing services for urgent situations.
                   </p>
                   <Button variant="destructive" size="lg" className="w-full">
-                    Call Emergency Line: (214) 555-HELP
+                    Call Emergency Line: (214) 836-4511
                   </Button>
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          {/* Google Maps Section */}
+          <div className="mt-16">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl text-center">Visit Our McKinney Location</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="w-full h-96 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3351.7567!2d-96.6397!3d33.1972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c39c8b8f8a8a1%3A0x1234567890abcdef!2s470%20Adriatic%20Pkwy%2C%20McKinney%2C%20TX%2075070!5e0!3m2!1sen!2sus!4v1234567890123"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Good Work Roofing Location - 470 Adriatic Pkwy, McKinney, TX 75070"
+                  ></iframe>
+                </div>
+                <div className="mt-4 text-center">
+                  <p className="text-muted-foreground">
+                    <strong>Good Work Roofing</strong><br />
+                    470 Adriatic Pkwy, McKinney, TX 75070<br />
+                    Serving McKinney, Dallas, Fort Worth, and surrounding areas
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

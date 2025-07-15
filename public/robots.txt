@@ -1,14 +1,34 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://goodworkroofing.com/sitemap.xml
+
+# High-crawl frequency for main pages
+User-agent: Googlebot
+Crawl-delay: 1
+Allow: /
+Allow: /services/
+Allow: /portfolio/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+
+# Specific roofing service pages
+Allow: /services/residential-roofing/
+Allow: /services/commercial-roofing/
+Allow: /services/roof-repair/
+Allow: /services/roof-replacement/
+Allow: /services/roof-installation/
+Allow: /services/emergency-roofing/
+
+# Block unnecessary pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Important business info for search engines
+# Business: Good Work Roofing
+# Location: McKinney, Texas
+# Phone: (214) 836-4511
+# Service Area: Dallas-Fort Worth Metroplex
