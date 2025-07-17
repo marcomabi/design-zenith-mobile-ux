@@ -22,12 +22,14 @@ export function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <NavLink to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">R</span>
-            </div>
+          <NavLink to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+            <img 
+              src="/lovable-uploads/a9d5e1e1-9b6b-498e-87cf-9ebaed1a3ba6.png" 
+              alt="GoodWorkRoofing Logo" 
+              className="h-8 w-auto"
+            />
             <span className="text-xl font-bold text-foreground hidden sm:block">
-              RoofMaster Pro
+              GoodWorkRoofing
             </span>
           </NavLink>
         </div>
@@ -63,7 +65,7 @@ export function Header() {
           >
             <Phone className="h-4 w-4 mr-2" />
             <span className="hidden sm:inline">Call Now</span>
-            <span className="sm:hidden">(214) 555-0123</span>
+            <span className="sm:hidden">(214) 836-4511</span>
           </Button>
 
           {/* Get Quote CTA - Desktop only */}

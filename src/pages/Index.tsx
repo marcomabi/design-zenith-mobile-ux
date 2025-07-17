@@ -1,14 +1,24 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Shield, Users, Award, Phone, Star, Home, Building, Wrench } from "lucide-react";
+import { Gallery } from "@/components/ui/gallery";
+import { ArrowRight, Shield, Users, Award, Phone, Star, Home, Building, Wrench, MapPin, Mail } from "lucide-react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { LocalBusinessSchema } from "@/components/seo/StructuredData";
 import { Link } from "react-router-dom";
 
 const Index = () => {
+  const galleryImages = [
+    "/lovable-uploads/7a162d81-382c-4858-b4c4-c369801ef0e4.png",
+    "/lovable-uploads/08d99cfd-8b5f-45e5-ab86-377850e60f49.png",
+    "/lovable-uploads/b166675c-2c5e-48de-b94f-4ce69390932f.png",
+    "/lovable-uploads/afe3d468-aaf3-4ed0-abae-3d4755f770ba.png",
+    "/lovable-uploads/b972918b-08e7-435a-aef7-d676de4f9406.png",
+    "/lovable-uploads/1c57f797-54cb-492f-bbe3-e3a1bb4e0732.png"
+  ];
+
   const businessData = {
-    name: "Good Work Roofing",
+    name: "GoodWorkRoofing",
     description: "Professional roofing contractor serving McKinney, Dallas, and Fort Worth areas with expert residential and commercial roofing services including repair, replacement, and installation.",
     address: {
       streetAddress: "470 Adriatic Pkwy",
@@ -42,43 +52,51 @@ const Index = () => {
   return (
     <Layout showBreadcrumbs={false}>
       <SEOHead 
-        title="Good Work Roofing - Professional Roofing Services in McKinney, TX"
-        description="Expert roofing contractor in McKinney, TX serving Dallas-Fort Worth. Residential & commercial roof repair, replacement, installation. Licensed, insured, 24/7 emergency service. Call (214) 836-4511"
-        keywords="roofing contractor McKinney TX, roof repair Dallas, roofing services Fort Worth, residential roofing McKinney, commercial roofing Dallas, emergency roof repair Texas"
+        title="GoodWorkRoofing - Professional Roofing Services in McKinney, Dallas-Fort Worth TX"
+        description="Expert roofing contractor in McKinney, Dallas-Fort Worth area. Residential & commercial roof repair, replacement, installation. Licensed, insured, 24/7 emergency service. Call (214) 836-4511"
+        keywords="roofing contractor McKinney TX, roof repair Dallas, roofing services Fort Worth, residential roofing, commercial roofing, emergency roof repair, Dallas roofing company"
         canonical="https://goodworkroofing.com"
       />
       <LocalBusinessSchema data={businessData} />
       {/* Hero Section */}
-      <section className="relative bg-secondary text-secondary-foreground py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Good Work Roofing - McKinney's Trusted Roofing Experts
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-secondary-foreground/90">
-              Professional roofing contractor serving McKinney, Dallas, and Fort Worth with 15+ years of experience. 
-              Protecting homes and businesses with superior craftsmanship and reliable service.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-4"
-                asChild
-              >
-                <Link to="/contact">
-                  Get Free Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10 text-lg px-8 py-4"
-                asChild
-              >
-                <Link to="/portfolio">View Our Work</Link>
-              </Button>
-            </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Images with Transition */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center animate-fade-in"
+            style={{ 
+              backgroundImage: `url('/lovable-uploads/7a162d81-382c-4858-b4c4-c369801ef0e4.png')`,
+              animationDelay: '0s',
+              animationDuration: '6s'
+            }}
+          />
+          <div 
+            className="absolute inset-0 bg-cover bg-center animate-fade-in opacity-0"
+            style={{ 
+              backgroundImage: `url('/lovable-uploads/08d99cfd-8b5f-45e5-ab86-377850e60f49.png')`,
+              animationDelay: '3s',
+              animationDuration: '6s',
+              animationIterationCount: 'infinite',
+              animationDirection: 'alternate'
+            }}
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
+            Taking care of your most valuable asset
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto drop-shadow-md">
+            Professional roofing solutions for homes and businesses in McKinney and the Dallas-Fort Worth area. Licensed, insured, and committed to excellence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+              Get Free Estimate
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary">
+              Emergency Service
+            </Button>
           </div>
         </div>
       </section>
@@ -260,32 +278,74 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Our Recent Work</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              See the quality craftsmanship and attention to detail in our recent roofing projects across Dallas-Fort Worth
+            </p>
+          </div>
+          <Gallery images={galleryImages} className="max-w-4xl mx-auto" />
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">Visit Our Office</h2>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <span>470 Adriatic Pkwy, McKinney, TX 75070</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-primary" />
+                  <span>(214) 836-4511</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <span>Goodworkroofing@gmail.com</span>
+                </div>
+              </div>
+              <p className="text-muted-foreground mt-6">
+                Serving McKinney, Dallas, Fort Worth, and the entire Dallas-Fort Worth metropolitan area with professional roofing services.
+              </p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3333.8234567890123!2d-96.6397!3d33.1972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3c5d6f7c8b9a%3A0x123456789abcdef0!2s470%20Adriatic%20Pkwy%2C%20McKinney%2C%20TX%2075070!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="GoodWorkRoofing Location"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Protect Your Investment?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Get a free estimate for your roofing project today
+            Contact GoodWorkRoofing today for a free estimate on your roofing project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              variant="secondary"
-              className="text-lg px-8 py-4"
-            >
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
               <Phone className="mr-2 h-5 w-5" />
               Call (214) 836-4511
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-4"
-              asChild
-            >
-              <Link to="/contact">
-                Request Quote Online
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Mail className="mr-2 h-5 w-5" />
+              Get Free Quote
             </Button>
           </div>
         </div>

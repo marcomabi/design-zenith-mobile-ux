@@ -10,14 +10,14 @@ interface SEOHeadProps {
 }
 
 export function SEOHead({
-  title = "Good Work Roofing - Professional Roofing Services in McKinney, TX",
-  description = "Expert roofing services in McKinney, Dallas-Fort Worth area. Residential & commercial roof repair, replacement, installation. Licensed, insured, 24/7 emergency service. Call (214) 836-4511",
-  keywords = "roofing contractor McKinney TX, roof repair Dallas, roofing services Fort Worth, residential roofing, commercial roofing, emergency roof repair",
+  title = "GoodWorkRoofing - Professional Roofing Services in McKinney, Dallas-Fort Worth TX",
+  description = "Expert roofing contractor in McKinney, Dallas-Fort Worth area. Residential & commercial roof repair, replacement, installation. Licensed, insured, 24/7 emergency service. Call (214) 836-4511",
+  keywords = "roofing contractor McKinney TX, roof repair Dallas, roofing services Fort Worth, residential roofing, commercial roofing, emergency roof repair, Dallas roofing company",
   canonical,
-  ogImage = "https://goodworkroofing.com/og-image.jpg",
+  ogImage = "/lovable-uploads/8471e9f7-aec3-4ca3-8079-b90ea7fae8c9.png",
   noindex = false
 }: SEOHeadProps) {
-  const fullTitle = title.includes('Good Work Roofing') ? title : `${title} | Good Work Roofing`;
+  const fullTitle = title.includes('GoodWorkRoofing') ? title : `${title} | GoodWorkRoofing`;
   
   return (
     <Helmet>

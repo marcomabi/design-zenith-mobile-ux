@@ -113,7 +113,7 @@ export function ServiceSchema({ service }: { service: { name: string; descriptio
     "url": service.url,
     "provider": {
       "@type": "RoofingContractor",
-      "name": "Good Work Roofing",
+      "name": "GoodWorkRoofing",
       "telephone": "+1-214-836-4511",
       "url": "https://goodworkroofing.com"
     },

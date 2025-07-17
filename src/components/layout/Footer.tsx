@@ -9,14 +9,16 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">R</span>
-              </div>
-              <span className="text-xl font-bold">RoofMaster Pro</span>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/a9d5e1e1-9b6b-498e-87cf-9ebaed1a3ba6.png" 
+                alt="GoodWorkRoofing Logo" 
+                className="h-8 w-auto"
+              />
+              <span className="text-xl font-bold">GoodWorkRoofing</span>
             </div>
             <p className="text-secondary-foreground/80">
-              Professional roofing services in Dallas-Fort Worth with 20+ years of experience.
+              Professional roofing services in McKinney and the Dallas-Fort Worth area. Licensed, insured, and committed to excellence.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="hover:bg-secondary-foreground/10">
@@ -105,17 +107,17 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-secondary-foreground/80">(214) 555-0123</span>
+                <span className="text-secondary-foreground/80">(214) 836-4511</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-secondary-foreground/80">info@roofmasterpro.com</span>
+                <span className="text-secondary-foreground/80">Goodworkroofing@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-primary mt-1" />
                 <span className="text-secondary-foreground/80">
-                  123 Main Street<br />
-                  Dallas, TX 75201
+                  470 Adriatic Pkwy<br />
+                  McKinney, TX 75070
                 </span>
               </div>
             </div>
@@ -123,7 +125,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-secondary-foreground/60">
-          <p>&copy; 2024 RoofMaster Pro. All rights reserved.</p>
+          <p>&copy; 2024 GoodWorkRoofing. All rights reserved.</p>
         </div>
       </div>
     </footer>
