@@ -60,24 +60,23 @@ const Index = () => {
       <LocalBusinessSchema data={businessData} />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Images with Transition */}
+        {/* Background Images with Preload and Transition */}
         <div className="absolute inset-0">
+          <link rel="preload" as="image" href="/lovable-uploads/7a162d81-382c-4858-b4c4-c369801ef0e4.png" />
+          <link rel="preload" as="image" href="/lovable-uploads/08d99cfd-8b5f-45e5-ab86-377850e60f49.png" />
           <div 
-            className="absolute inset-0 bg-cover bg-center animate-fade-in"
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
             style={{ 
               backgroundImage: `url('/lovable-uploads/7a162d81-382c-4858-b4c4-c369801ef0e4.png')`,
-              animationDelay: '0s',
-              animationDuration: '6s'
             }}
           />
           <div 
-            className="absolute inset-0 bg-cover bg-center animate-fade-in opacity-0"
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 animate-pulse opacity-0"
             style={{ 
               backgroundImage: `url('/lovable-uploads/08d99cfd-8b5f-45e5-ab86-377850e60f49.png')`,
-              animationDelay: '3s',
-              animationDuration: '6s',
+              animationDelay: '4s',
+              animationDuration: '8s',
               animationIterationCount: 'infinite',
-              animationDirection: 'alternate'
             }}
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -94,7 +93,7 @@ const Index = () => {
             <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
               Get Free Estimate
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-primary">
+            <Button size="lg" variant="outline-light" className="text-lg px-8 py-6">
               Emergency Service
             </Button>
           </div>
@@ -343,7 +342,7 @@ const Index = () => {
               <Phone className="mr-2 h-5 w-5" />
               Call (214) 836-4511
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <Button size="lg" variant="cta-secondary" className="text-lg px-8 py-6">
               <Mail className="mr-2 h-5 w-5" />
               Get Free Quote
             </Button>
